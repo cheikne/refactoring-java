@@ -1,9 +1,7 @@
 package com.gildedrose;
 
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-// import static org.hamcrest.MatcherAssert.assertEquals;
 import static org.hamcrest.Matchers.*;
 
 class GildedRoseTest {
@@ -14,50 +12,16 @@ class GildedRoseTest {
   @Test
   @DisplayName("Test that the name is unchanged")
   void testName() {
-    Item element = new Item("foo", 0, 0);
-    GildedRose app = new GildedRose(new Item[] {element});
     app.updateQuality();
-    assertThat(element.name, is("foo"));
-  }
-  //The Tests done on the variable Quality
-  @Test
-  @DisplayName("Test that the value Quality becomes negative")
-  void TestQualityIsNegative(){
-    Item element = new Item("MaAXIME",0,20);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    Assertions.assertFalse(element.quality<0);
-  }
-  @Test
-   @DisplayName("Test that the final value of Quality is different at value actual")
-  void TestEqualityValueActualEndQuality(){
-    Item element = new Item("MaAXIME",0,20);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    Assertions.assertEquals(18,element.quality,()->"Les valeur sont differentes");
-  }
-
-  @Test
-  @DisplayName("Test that the value of Quality is geatest 50")
-  void TestIfValueOhQualityGreatestExpected(){
-    Item element = new Item("MaAXIME",0,21);
-    GildedRose app = new GildedRose(new Item[] {element});
-    app.updateQuality();
-    Assertions.assertFalse(element.quality >50);
-  }
-
-
-
-
-
-
-  
+    assertThat(items[0].name, is("foo"));
+  } 
     /* Tests sur produits normaux */
   @Test
   public void testDecSellInQuality() {
     app.updateQuality();
     assertThat("diminution des valeurs sellIn et quality par le sytème à la fin de chaque journéé",
                 items[0].sellIn == 9 && items[0].quality == 19);
+                System.out.println();
 
   }
 
