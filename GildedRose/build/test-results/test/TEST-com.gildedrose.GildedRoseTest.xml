@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-09-24T23:18:49" hostname="chkane-HeroBook-Pro" time="0.067">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="29" skipped="0" failures="0" errors="0" timestamp="2022-10-08T13:41:21" hostname="chkane-HeroBook-Pro" time="0.29">
   <properties/>
-  <testcase name="Test that the final value of Quality is different at value actual" classname="com.gildedrose.GildedRoseTest" time="0.037"/>
-  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.016"/>
-  <testcase name="Test that the value Quality becomes negative" classname="com.gildedrose.GildedRoseTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="testSulfurasQualityLessThan50SellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.045"/>
+  <testcase name="testSulfurasConstantQuality()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
+  <testcase name="testAgedBrieQualityEqualsTo50()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
+  <testcase name="testSellInNegativeQualityPositive()" classname="com.gildedrose.GildedRoseTest" time="0.007"/>
+  <testcase name="testSellInPositiveQualityIsZero()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testAgedBrieSellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.004"/>
+  <testcase name="testBkgStageQualityNegativeSellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testAgedBrieNegativeSellInQualityMoreThan50()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testBackStageQualityGreaterThan50SellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testSellInAndQualityNegative()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
+  <testcase name="testBackStageQualityGreaterThan50SellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.006"/>
+  <testcase name="testAgedBrieQualityGreaterThan50SellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.011"/>
+  <testcase name="testBackStageSellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testAgedBrieSellInMoreThan11()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testQualityNonNegative()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
+  <testcase name="testAgedBrieQualityGreaterThan50SellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testQualityNoMoreThan50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testSulfurasQualSellInNegative()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testSulfurasSellInNegQualPositive()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testDecSellInQuality()" classname="com.gildedrose.GildedRoseTest" time="0.027"/>
+  <testcase name="testBckStageQualityMoreThan50()" classname="com.gildedrose.GildedRoseTest" time="0.006"/>
+  <testcase name="testBackStageQualityEqualsTo50()" classname="com.gildedrose.GildedRoseTest" time="0.009"/>
+  <testcase name="testBackStageSellInLessThan11()" classname="com.gildedrose.GildedRoseTest" time="0.005"/>
+  <testcase name="testSulfurasConstantNegativeQuality()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testBckStageSellInNegativeQualityLessThan50()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
+  <testcase name="testAgedBrieSellInLessThan6()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testAgedBrieNegativeSellInQualityLessThan50()" classname="com.gildedrose.GildedRoseTest" time="0.01"/>
+  <testcase name="testBackStageSellInf11QualInf50()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <system-out><![CDATA[
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
