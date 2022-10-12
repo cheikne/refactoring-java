@@ -3,7 +3,7 @@
 class GildedRose {
     Item[] items;
     private static final String SULFURAS = &quot;Sulfuras, Hand of Ragnaros&quot;;
-    private static final String AGED_BRIE = &quot;Aged Brie&quot;;
+    private static final String AGEDBRIE = &quot;Aged Brie&quot;;
     private static final String BACKSTAGE = &quot;Backstage passes to a TAFKAL80ETC concert&quot;;
 
 <span class="fc" id="L9">    public GildedRose(Item[] items) {</span>
@@ -16,12 +16,12 @@ class GildedRose {
         }
 <span class="fc" id="L17">    }</span>
     
-    public static void updateValueQuality(Item item,int value){
+    public static void setValueQuality(Item item,int value){
 <span class="fc" id="L20">        item.quality += value;</span>
 <span class="fc" id="L21">    }</span>
     public static void updateItem(Item item) {
 <span class="fc bfc" id="L23" title="All 4 branches covered.">        switch (item.name) {</span>
-          case AGED_BRIE :
+          case AGEDBRIE :
 <span class="fc" id="L25">            incrementValueQualityNotMax(item);</span>
 <span class="fc" id="L26">            break;</span>
               
@@ -45,7 +45,7 @@ class GildedRose {
         
 <span class="fc bfc" id="L46" title="All 2 branches covered.">        if (item.sellIn &lt; 0) {</span>
 <span class="fc bfc" id="L47" title="All 4 branches covered.">          switch (item.name) {</span>
-            case AGED_BRIE :
+            case AGEDBRIE :
 <span class="fc" id="L49">            incrementValueQualityNotMax(item);</span>
 <span class="fc" id="L50">              break;</span>
             case BACKSTAGE:
@@ -62,13 +62,13 @@ class GildedRose {
 
     public static void incrementValueQualityNotMax(Item item) {
 <span class="fc bfc" id="L64" title="All 2 branches covered.">        if (item.quality &lt; 50) {</span>
-<span class="fc" id="L65">          updateValueQuality(item,1);</span>
+<span class="fc" id="L65">          setValueQuality(item,1);</span>
         }
 <span class="fc" id="L67">      }</span>
     
       public static void decrementValueQualityNotMin(Item item) {
 <span class="fc bfc" id="L70" title="All 2 branches covered.">        if (item.quality &gt; 0) {</span>
-<span class="fc" id="L71">            updateValueQuality(item,-1);</span>
+<span class="fc" id="L71">            setValueQuality(item,-1);</span>
         }
 <span class="fc" id="L73">      }</span>
     
