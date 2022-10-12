@@ -278,4 +278,26 @@ class GildedRoseTest {
     app.updateQuality();
     assertThat("Backstage dépassant 50 de qualité", items[0].quality == 70 && items[0].sellIn == 14);
   }
+
+
+    /**
+   * Conjured
+   */
+
+  @Test
+  public void testConjuredSelInPositive() {
+    items[0].name = "Conjured";
+    app.updateQuality();
+    assertThat("Conjured quailite 28 et selIn 19 ", items[0].quality == 25);
+
+  }
+
+  @Test
+  public void testConjuredSellInNegative() {
+    items[0].name = "Conjured";
+    items[0].quality = 25;
+    items[0].sellIn = -2;
+    app.updateQuality();
+    assertThat("Conjured selIn -2 et quality 25", items[0].quality == 19 && items[0].sellIn == -2);
+  }
 }
