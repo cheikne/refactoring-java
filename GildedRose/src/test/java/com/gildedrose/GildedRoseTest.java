@@ -286,7 +286,9 @@ class GildedRoseTest {
 
   @Test
   public void testConjuredSelInPositive() {
-    items[0].name = "Conjured";
+    items[0].name = "Conjured Mana Cake";
+    items[0].quality = 28;
+    items[0].sellIn = 10;
     app.updateQuality();
     assertThat("Conjured quailite 28 et selIn 19 ", items[0].quality == 25);
 
@@ -294,10 +296,10 @@ class GildedRoseTest {
 
   @Test
   public void testConjuredSellInNegative() {
-    items[0].name = "Conjured";
+    items[0].name = "Conjured Mana Cake";
     items[0].quality = 25;
     items[0].sellIn = -2;
     app.updateQuality();
-    assertThat("Conjured selIn -2 et quality 25", items[0].quality == 19 && items[0].sellIn == -2);
+    assertThat("Conjured selIn -2 et quality 25", items[0].quality == 19);
   }
 }

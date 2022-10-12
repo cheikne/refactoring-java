@@ -5,6 +5,7 @@ class GildedRose {
     private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
     private static final String AGEDBRIE = "Aged Brie";
     private static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
+    private static final String CONJURED = "Conjured Mana Cake";
 
     public GildedRose(Item[] items) {
         this.items = items;
@@ -45,6 +46,8 @@ class GildedRose {
         
         if (item.sellIn < 0) {
           switch (item.name) {
+            // case CONJURED:
+            //   setValueQuality(item, -4);
             case AGEDBRIE :
             incrementValueQualityNotMax(item);
               break;
@@ -57,6 +60,17 @@ class GildedRose {
               break;
     
           }
+        }
+        switch(item.name){
+          case CONJURED:
+            if(item.sellIn >=0){
+              setValueQuality(item, -2);
+              break;
+            }
+            setValueQuality(item, -4);
+            break;
+          default :
+            break;
         }
       }
 

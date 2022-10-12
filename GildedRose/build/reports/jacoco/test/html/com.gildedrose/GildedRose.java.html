@@ -5,72 +5,86 @@ class GildedRose {
     private static final String SULFURAS = &quot;Sulfuras, Hand of Ragnaros&quot;;
     private static final String AGEDBRIE = &quot;Aged Brie&quot;;
     private static final String BACKSTAGE = &quot;Backstage passes to a TAFKAL80ETC concert&quot;;
+    private static final String CONJURED = &quot;Conjured Mana Cake&quot;;
 
-<span class="fc" id="L9">    public GildedRose(Item[] items) {</span>
-<span class="fc" id="L10">        this.items = items;</span>
-<span class="fc" id="L11">    }</span>
+<span class="fc" id="L10">    public GildedRose(Item[] items) {</span>
+<span class="fc" id="L11">        this.items = items;</span>
+<span class="fc" id="L12">    }</span>
 
     public void updateQuality() {
-<span class="fc bfc" id="L14" title="All 2 branches covered.">        for (int i = 0; i &lt; items.length; i++) {</span>
-<span class="fc" id="L15">          updateItem(items[i]);</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for (int i = 0; i &lt; items.length; i++) {</span>
+<span class="fc" id="L16">          updateItem(items[i]);</span>
         }
-<span class="fc" id="L17">    }</span>
+<span class="fc" id="L18">    }</span>
     
     public static void setValueQuality(Item item,int value){
-<span class="fc" id="L20">        item.quality += value;</span>
-<span class="fc" id="L21">    }</span>
+<span class="fc" id="L21">        item.quality += value;</span>
+<span class="fc" id="L22">    }</span>
     public static void updateItem(Item item) {
-<span class="fc bfc" id="L23" title="All 4 branches covered.">        switch (item.name) {</span>
+<span class="fc bfc" id="L24" title="All 4 branches covered.">        switch (item.name) {</span>
           case AGEDBRIE :
-<span class="fc" id="L25">            incrementValueQualityNotMax(item);</span>
-<span class="fc" id="L26">            break;</span>
+<span class="fc" id="L26">            incrementValueQualityNotMax(item);</span>
+<span class="fc" id="L27">            break;</span>
               
           case BACKSTAGE :
-<span class="fc" id="L29">            incrementValueQualityNotMax(item);</span>
-<span class="fc bfc" id="L30" title="All 2 branches covered.">            if (item.sellIn &lt; 11) {</span>
-<span class="fc" id="L31">              incrementValueQualityNotMax(item);</span>
+<span class="fc" id="L30">            incrementValueQualityNotMax(item);</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">            if (item.sellIn &lt; 11) {</span>
+<span class="fc" id="L32">              incrementValueQualityNotMax(item);</span>
             }
-<span class="fc bfc" id="L33" title="All 2 branches covered.">            if (item.sellIn &lt; 6) {</span>
-<span class="fc" id="L34">                incrementValueQualityNotMax(item);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            if (item.sellIn &lt; 6) {</span>
+<span class="fc" id="L35">                incrementValueQualityNotMax(item);</span>
             }
             break;
     
-<span class="fc" id="L38">          case SULFURAS : break;</span>
+<span class="fc" id="L39">          case SULFURAS : break;</span>
           default:
-<span class="fc" id="L40">            decrementValueQualityNotMin(item);</span>
+<span class="fc" id="L41">            decrementValueQualityNotMin(item);</span>
             break;
         }
         
-<span class="fc bfc" id="L44" title="All 2 branches covered.">        item.sellIn = item.name.equals(SULFURAS)?item.sellIn:item.sellIn-1;</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        item.sellIn = item.name.equals(SULFURAS)?item.sellIn:item.sellIn-1;</span>
         
-<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (item.sellIn &lt; 0) {</span>
-<span class="fc bfc" id="L47" title="All 4 branches covered.">          switch (item.name) {</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (item.sellIn &lt; 0) {</span>
+<span class="fc bfc" id="L48" title="All 4 branches covered.">          switch (item.name) {</span>
+            // case CONJURED:
+            //   setValueQuality(item, -4);
             case AGEDBRIE :
-<span class="fc" id="L49">            incrementValueQualityNotMax(item);</span>
-<span class="fc" id="L50">              break;</span>
-            case BACKSTAGE:
-<span class="fc" id="L52">              item.quality = 0;</span>
+<span class="fc" id="L52">            incrementValueQualityNotMax(item);</span>
 <span class="fc" id="L53">              break;</span>
-<span class="fc" id="L54">            case SULFURAS: break;</span>
+            case BACKSTAGE:
+<span class="fc" id="L55">              item.quality = 0;</span>
+<span class="fc" id="L56">              break;</span>
+<span class="fc" id="L57">            case SULFURAS: break;</span>
             default:
-<span class="fc" id="L56">              decrementValueQualityNotMin(item);</span>
+<span class="fc" id="L59">              decrementValueQualityNotMin(item);</span>
               break;
     
           }
         }
-<span class="fc" id="L61">      }</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        switch(item.name){</span>
+          case CONJURED:
+<span class="fc bfc" id="L66" title="All 2 branches covered.">            if(item.sellIn &gt;=0){</span>
+<span class="fc" id="L67">              setValueQuality(item, -2);</span>
+<span class="fc" id="L68">              break;</span>
+            }
+<span class="fc" id="L70">            setValueQuality(item, -4);</span>
+<span class="fc" id="L71">            break;</span>
+          default :
+            break;
+        }
+<span class="fc" id="L75">      }</span>
 
     public static void incrementValueQualityNotMax(Item item) {
-<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (item.quality &lt; 50) {</span>
-<span class="fc" id="L65">          setValueQuality(item,1);</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        if (item.quality &lt; 50) {</span>
+<span class="fc" id="L79">          setValueQuality(item,1);</span>
         }
-<span class="fc" id="L67">      }</span>
+<span class="fc" id="L81">      }</span>
     
       public static void decrementValueQualityNotMin(Item item) {
-<span class="fc bfc" id="L70" title="All 2 branches covered.">        if (item.quality &gt; 0) {</span>
-<span class="fc" id="L71">            setValueQuality(item,-1);</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">        if (item.quality &gt; 0) {</span>
+<span class="fc" id="L85">            setValueQuality(item,-1);</span>
         }
-<span class="fc" id="L73">      }</span>
+<span class="fc" id="L87">      }</span>
     
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
